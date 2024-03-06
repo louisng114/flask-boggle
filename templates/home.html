@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Boggle home</title>
+</head>
+<body>
+    <h1>BOGGLE TIME!</h1>
+    <p>You have 60 seconds to find as many words as you can!</p>
+    <p>Played {{session.get("plays", 0)}} time(s)</p>
+    <p>High Score: {{session.get("high_score", 0)}}</p>
+    <form action="/" method="post">
+        <input type="submit" value="new game">
+    </form><br>
+    <table>
+        {% for row in session["board"] %}
+        <tr>
+        {% for ltr in row %}
+            <td>{{ltr}}</td>
+        {% endfor %}
+        </tr>
+        {% endfor %}
+    </table> <br>
+    <span id="score">Score : 0</span><span id="timer">Time : 60</span><br><br>
+    <form id="ansForm">
+        <label for="ans"></label>
+        <input type="text" id="ans" name="ans" placeholder="Enter word" required>
+        <input type="submit" value="submit">
+    </form> <span id="result"></span>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/static/app.js"></script>
+</body>
+</html>

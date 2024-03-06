@@ -1,0 +1,35 @@
+table, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    text-align: center;
+    font-family: "Comic Sans MS", "Comic Sans";
+    font-size: 50px;
+    width: 100px;
+    height: 100px;
+}
+
+#result {
+    background-color: cyan;
+    font-family: "Comic Sans MS", "Comic Sans";
+    font-size: 25px;
+    margin: 10px;
+}
+
+#score {
+    background-color: yellow;
+    font-family: "Comic Sans MS", "Comic Sans";
+    font-size: 25px;
+    margin: 10px;
+    padding: 10px;
+}
+
+#timer {
+    background-color: red;
+    font-family: "Comic Sans MS", "Comic Sans";
+    font-size: 25px;
+    margin: 10px;
+    padding: 10px;
+}
