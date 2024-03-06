@@ -10,7 +10,6 @@ game_board = boggle_game.make_board()
 @app.route("/")
 def home():
     """save game board and render homepage"""
-    session.clear()
     session["board"] = game_board
     return render_template("home.html")
 
