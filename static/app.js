@@ -10,9 +10,7 @@ let timer = 60;
 const ansHandler = async (evt) => {
     evt.preventDefault();
     ans = ansInput.value;
-    check = await axios.post("/check", {
-        "ans" :  ans
-    });
+    check = await axios.get("/check", {params: {"ans": ans}});
     report = check.data["result"];
     result.innerText = report;
     if (report == "ok") {

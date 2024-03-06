@@ -21,11 +21,11 @@ def new_game():
     session["board"] = game_board
     return render_template("home.html")
 
-@app.route("/check", methods=["post"])
+@app.route("/check")
 def word_submission():
     """handles answer submission"""
-    ans = request.json["ans"]
-    result = boggle_game.check_valid_word(game_board,ans)
+    ans = request.args["ans"]
+    result = boggle_game.check_valid_word(session["board"],ans)
     return jsonify({"result": result})
 
 @app.route("/result", methods=["post"])
